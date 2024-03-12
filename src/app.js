@@ -1,14 +1,9 @@
 const http = require('http');
-const fs = require('fs');
-const path = require('path');
 
-const getUsers = () => {
-   const filePath = path.join(__dirname, './data/users.json')
-   return fs.readFileSync(filePath);
-}
+const getUsers = require('./modules/users');
 
 const server = http.createServer((request, response) => {
-   if(request.url === '/user') {
+   if(request.url === '/users') {
       response.status = 200;
       response.statusMessange = "ok";
       response.header = "Content-Type: application/json";
@@ -20,7 +15,7 @@ const server = http.createServer((request, response) => {
    response.status = 200;
    response.statusMessange = "ok";
    response.header = "Content-Type: text/plain";
-   response.write("Hello World!!!");
+   response.write("Hello all!!!");
    response.end();
 });
 
