@@ -1,11 +1,10 @@
 const http = require('http');
 const fs = require('fs');
-// const path = require('path');
+const path = require('path');
 
 const getUsers = () => {
-//    const filePath = path.join(__dirname, './data/users.json')
-   //const filePath = path.join('./src/data/users.json')
-   return fs.readFileSync('./src/data/users.json');
+   const filePath = path.join(__dirname, './data/users.json')
+   return fs.readFileSync(filePath);
 }
 
 const server = http.createServer((request, response) => {
