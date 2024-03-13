@@ -1,5 +1,6 @@
 const http = require('http');
-
+const hostname = '127.0.0.1';
+const port = 3000;
 const getUsers = require('./modules/users');
 
 const server = http.createServer((request, response) => {
@@ -15,10 +16,10 @@ const server = http.createServer((request, response) => {
    response.status = 200;
    response.statusMessange = "ok";
    response.header = "Content-Type: text/plain";
-   response.write("Hello all!!!");
+   response.write("Hello Everyone!!!");
    response.end();
 });
 
-server.listen(3000, () => {
-   console.log("Сервер запущен по адресу http://127.0.0.1:3000");
+server.listen(port, hostname, () => {
+   console.log(`Сервер запущен по адресу http://${hostname}:${port}/`);
 })
