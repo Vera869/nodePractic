@@ -1,6 +1,6 @@
-const LoggerTwo = (request, response, next) => {
+const loggerTwo = (request, response, next) => {
    console.log("logg 2");
    next();
 };
 
-module.exports = LoggerTwo;
+module.exports = loggerTwo;
