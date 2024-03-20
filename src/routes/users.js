@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const loggerTwo = require('../middleweare/loggerTwo');
+
 const {
    getUsers,
    getUser,
@@ -6,7 +8,7 @@ const {
    updateUser,
    deleteUser
 } = require('../controllers/users')
-
+router.use(loggerTwo);
 router.get('/users', getUsers);
 router.get('/users/:user_id', getUser);
 router.post('/users', createUser);

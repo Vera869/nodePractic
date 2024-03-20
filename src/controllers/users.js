@@ -12,6 +12,9 @@ const getUser = (request, response) => {
 
 const createUser = (request, response) => {
    //create new user
+   console.log("create user");
+   response.status(201);
+   response.send(request.body);
 };
 
 const updateUser = (request, response) => {
