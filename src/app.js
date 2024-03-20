@@ -1,10 +1,10 @@
 const express = require('express');
-
 const app = express();
-
 const dotenv = require('dotenv');
-
 const userRouter = require('./routes/users');
+const LoggerOne = require('./middleweare/loggerOne');
+const LoggerTwo = require('./middleweare/loggerTwo');
+
 
 dotenv.config();
 
@@ -23,12 +23,9 @@ app.post("/", (request, response) => {
    response.send("Hello from POST!!!");
 })
 
-// app.get("/users/34", (request, response) => {
-//    response.status(200);
-//    response.send("user with id: 34");
-// })
-
 app.use(userRouter);
+app.use(LoggerOne);
+app.use(LoggerTwo);
 
 app.listen(PORT, () => {
       console.log(`Сервер запущен по адресу http://${API_URL}:${PORT}/`);
