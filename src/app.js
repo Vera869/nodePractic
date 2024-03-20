@@ -41,6 +41,11 @@ app.get("/", (request, response) => {
    response.send("Hello Everyone 2!!!");
 })
 
+app.post("/", (request, response) => {
+   response.status(200);
+   response.send("Hello from POST!!!");
+})
+
 app.listen(PORT, () => {
       console.log(`Сервер запущен по адресу http://${API_URL}:${PORT}/`);
     })
