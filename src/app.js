@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
@@ -14,6 +15,7 @@ const {
    API_URL = "127.0.0.1"
 } = process.env;
 
+app.use(cors);
 app.use(loggerOne);
 app.use(bodyParser.json());
 
